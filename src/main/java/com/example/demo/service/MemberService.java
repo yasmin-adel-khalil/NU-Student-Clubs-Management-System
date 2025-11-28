@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Club;
 import com.example.demo.model.Member;
+import com.example.demo.model.SeasonType;
 import com.example.demo.repository.MemberRepository;
 
 @Service
@@ -31,6 +32,20 @@ public class MemberService {
 
     public List<Member> getMembersByClub(Club club) {
         return repo.findByClubOrderByScoreDesc(club);
+    }
+
+    public List<Member> getBestMembersByClubAndSeason(Long clubId, SeasonType season) {
+        List<Member> members = repo.findByClubIdAndSeason(clubId, season);
+        // pick the top (highest score) member per committee
+        java.util.Map<String, Member> bestPerCommittee = new java.util.HashMap<>();
+        for (Member m : members) {
+            String committee = m.getCommittee() == null ? "Unknown" : m.getCommittee();
+            Member current = bestPerCommittee.get(committee);
+            if (current == null || m.getScore() > current.getScore()) {
+                bestPerCommittee.put(committee, m);
+            }
+        }
+        return new java.util.ArrayList<>(bestPerCommittee.values());
     }
 
     public Member createMember(Member member) {

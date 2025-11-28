@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.demo.model.Club;
 import com.example.demo.model.Member;
+import com.example.demo.model.SeasonType;
 
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
@@ -14,4 +15,8 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
     List<Member> findByClubOrderByScoreDesc(Club club);
     
     List<Member> findTop5ByClubOrderByScoreDesc(Club club);
+
+    List<Member> findByClubIdAndSeason(Long clubId, SeasonType season);
+
+    List<Member> findByClubIdOrderByScoreDesc(Long clubId);
 }

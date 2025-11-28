@@ -21,40 +21,26 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // Create clubs
-        Club club1 = new Club(1L, "Computer Science Club", "Club for CS enthusiasts");
-        Club club2 = new Club(2L, "Debate Club", "Public speaking and debate");
-        Club club3 = new Club(3L, "Photography Club", "Photography and visual arts");
-        Club club4 = new Club(4L, "Music Club", "Music and performing arts");
+        // Create IEEE NU Branch club with committees
+        Club ieee = new Club(null, "IEEE NU Branch", "IEEE student branch at NU - multiple committees");
+        clubRepository.save(ieee);
 
-        clubRepository.save(club1);
-        clubRepository.save(club2);
-        clubRepository.save(club3);
-        clubRepository.save(club4);
+        // Create members for IEEE NU Branch - 5 committees: PR, HR, Operations, Marketing, Media
+        // For each committee create one mid-season best and one end-season best (10 members)
+        memberRepository.save(new Member("Salma Nasser", "Best Mid", "PR", 96, com.example.demo.model.SeasonType.MID, ieee));
+        memberRepository.save(new Member("Yara Fathy", "Best End", "PR", 94, com.example.demo.model.SeasonType.END, ieee));
 
-        // Create members for Computer Science Club
-        memberRepository.save(new Member(1L, "Ahmed Hassan", "President", 95, club1));
-        memberRepository.save(new Member(2L, "Fatima Ali", "Vice President", 92, club1));
-        memberRepository.save(new Member(3L, "Omar Mohamed", "Treasurer", 88, club1));
-        memberRepository.save(new Member(4L, "Noor Khalid", "Secretary", 85, club1));
-        memberRepository.save(new Member(5L, "Sara Ibrahim", "Member", 80, club1));
+        memberRepository.save(new Member("Mohamed Sami", "Best Mid", "HR", 95, com.example.demo.model.SeasonType.MID, ieee));
+        memberRepository.save(new Member("Noha Adel", "Best End", "HR", 93, com.example.demo.model.SeasonType.END, ieee));
 
-        // Create members for Debate Club
-        memberRepository.save(new Member(6L, "Mariam Rashid", "President", 93, club2));
-        memberRepository.save(new Member(7L, "Hassan Karim", "Vice President", 90, club2));
-        memberRepository.save(new Member(8L, "Layla Noor", "Member", 87, club2));
-        memberRepository.save(new Member(9L, "Zainab Mustafa", "Member", 84, club2));
+        memberRepository.save(new Member("Khaled Omar", "Best Mid", "Operations", 97, com.example.demo.model.SeasonType.MID, ieee));
+        memberRepository.save(new Member("Lina Samir", "Best End", "Operations", 92, com.example.demo.model.SeasonType.END, ieee));
 
-        // Create members for Photography Club
-        memberRepository.save(new Member(10L, "Karim Saeed", "President", 91, club3));
-        memberRepository.save(new Member(11L, "Hana Waleed", "Vice President", 89, club3));
-        memberRepository.save(new Member(12L, "Rania Hassan", "Member", 86, club3));
+        memberRepository.save(new Member("Omar Saad", "Best Mid", "Marketing", 94, com.example.demo.model.SeasonType.MID, ieee));
+        memberRepository.save(new Member("Mona Elshamy", "Best End", "Marketing", 90, com.example.demo.model.SeasonType.END, ieee));
 
-        // Create members for Music Club
-        memberRepository.save(new Member(13L, "Amira Saleh", "President", 94, club4));
-        memberRepository.save(new Member(14L, "Youssef Adel", "Vice President", 91, club4));
-        memberRepository.save(new Member(15L, "Dina Mansour", "Member", 82, club4));
-        memberRepository.save(new Member(16L, "Tarek Jamal", "Member", 79, club4));
+        memberRepository.save(new Member("Ibrahim Hany", "Best Mid", "Media", 95, com.example.demo.model.SeasonType.MID, ieee));
+        memberRepository.save(new Member("Dalia Mostafa", "Best End", "Media", 91, com.example.demo.model.SeasonType.END, ieee));
 
         System.out.println("Sample data loaded successfully!");
     }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Club;
 import com.example.demo.model.Member;
+import com.example.demo.model.SeasonType;
 import com.example.demo.repository.ClubRepository;
 import com.example.demo.service.MemberService;
 
@@ -53,6 +54,16 @@ public class MemberController {
             return memberService.getMembersByClub(club);
         }
         return List.of();
+    }
+
+    @GetMapping("/club/{clubId}/bests/mid")
+    public List<Member> getMidSeasonBests(@PathVariable Long clubId) {
+        return memberService.getBestMembersByClubAndSeason(clubId, SeasonType.MID);
+    }
+
+    @GetMapping("/club/{clubId}/bests/end")
+    public List<Member> getEndSeasonBests(@PathVariable Long clubId) {
+        return memberService.getBestMembersByClubAndSeason(clubId, SeasonType.END);
     }
 
     @PostMapping
