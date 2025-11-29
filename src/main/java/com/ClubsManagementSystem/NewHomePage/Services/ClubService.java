@@ -13,10 +13,11 @@ public class ClubService {
 
     public ClubService() {
         // sample data matching the homepage attachment
-        clubs.add(new Club(1L, "Eagles Club", "Has successful project", 42));
-        clubs.add(new Club(2L, "IEEE-NU", "Organised a coding workshop", 36));
-        clubs.add(new Club(3L, "Music Club", "Register a mallionary", 18));
-        clubs.add(new Club(4L, "Art Club", "Coordinated the annual fair", 25));
+        clubs.add(new Club(1L, "ICPC", "Organized a Coding Competition", 60));
+        clubs.add(new Club(2L, "IEEE-NU", "Accomplished a Computer Society", 50));
+        clubs.add(new Club(3L, "NIMUN", "Coordinated the annual fair", 18));
+        clubs.add(new Club(4L, "Book Club", "Coordinated a huge book fair", 25));
+        clubs.add(new Club(5L, "Wesal", "Coordinated huge Ramadan Iftar", 25));
     }
 
     public List<Club> getTopClubs() {
