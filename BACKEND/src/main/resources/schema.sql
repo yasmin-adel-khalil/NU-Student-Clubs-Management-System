@@ -16,3 +16,12 @@ CREATE TABLE IF NOT EXISTS member (
     club_id BIGINT,
     FOREIGN KEY (club_id) REFERENCES club(id)
 );
+
+-- Create EVENT table if not exists
+CREATE TABLE IF NOT EXISTS event (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    date VARCHAR(100),
+    place VARCHAR(255),
+    description VARCHAR(1000)
+);

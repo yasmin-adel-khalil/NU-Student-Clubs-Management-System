@@ -21,3 +21,11 @@ INSERT INTO member (name, role, committee, score, season, club_id) VALUES ('Mona
 -- Media Committee: 1 mid-season best + 1 end-season best
 INSERT INTO member (name, role, committee, score, season, club_id) VALUES ('Ibrahim Hany', 'Best Mid', 'Media', 95, 'MID', 1);
 INSERT INTO member (name, role, committee, score, season, club_id) VALUES ('Dalia Mostafa', 'Best End', 'Media', 91, 'END', 1);
+
+-- Insert a sample event
+INSERT INTO event (name, date, place, description) VALUES (
+	'NU club festival - FALL 25',
+	'25-26 November 2025',
+	'Tarek Khalil Garden',
+	'Discover NU''s vibrant community at the Semester Club Festival! All student clubs will be there, giving you the chance to explore their activities, learn how to join, and enjoy fun games and challenges for a chance to win great prizes. It''s the perfect opportunity to find your place and get involved!'
+);
