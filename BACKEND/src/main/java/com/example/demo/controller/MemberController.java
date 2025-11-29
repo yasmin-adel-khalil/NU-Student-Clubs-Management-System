@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import com.example.demo.repository.ClubRepository;
 import com.example.demo.service.MemberService;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/members")
 public class MemberController {
 
@@ -58,12 +60,18 @@ public class MemberController {
 
     @GetMapping("/club/{clubId}/bests/mid")
     public List<Member> getMidSeasonBests(@PathVariable Long clubId) {
-        return memberService.getBestMembersByClubAndSeason(clubId, SeasonType.MID);
+        System.out.println("GET /members/club/" + clubId + "/bests/mid called");
+        List<Member> result = memberService.getBestMembersByClubAndSeason(clubId, SeasonType.MID);
+        System.out.println("Returning " + result.size() + " mid-season members");
+        return result;
     }
 
     @GetMapping("/club/{clubId}/bests/end")
     public List<Member> getEndSeasonBests(@PathVariable Long clubId) {
-        return memberService.getBestMembersByClubAndSeason(clubId, SeasonType.END);
+        System.out.println("GET /members/club/" + clubId + "/bests/end called");
+        List<Member> result = memberService.getBestMembersByClubAndSeason(clubId, SeasonType.END);
+        System.out.println("Returning " + result.size() + " end-season members");
+        return result;
     }
 
     @PostMapping

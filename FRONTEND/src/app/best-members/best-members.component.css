@@ -1,0 +1,26 @@
+.page-root{font-family:Inter, system-ui, Arial, sans-serif;color:#0f172a}
+.hero{background:linear-gradient(90deg,#06b6a4,#0b84ff);color:white;padding:36px 20px;border-radius:0 0 16px 16px}
+.hero-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.hero h1{margin:0;font-size:26px}
+.lead{opacity:0.95;margin-top:8px}
+.btn-primary{background:rgba(255,255,255,0.12);border:0;color:white;padding:10px 14px;border-radius:10px}
+
+.panel{max-width:1100px;margin:20px auto;padding:16px}
+.section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.club-name{color:#0b84ff;font-weight:700;margin:0 0 6px 0}
+.subtitle{color:#475569;font-size:14px}
+.tabs{display:flex;gap:12px}
+.tab{padding:8px 14px;border-radius:10px;background:#fff;cursor:pointer;color:#0b84ff;font-weight:600}
+.tab.active{background:#0b84ff;color:white}
+
+.committees{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:12px}
+.committee-card{background:#fff;padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(12,13,14,0.06)}
+.committee-card h3{margin:0 0 10px 0}
+.member-card{display:flex;gap:12px;align-items:center}
+.avatar{width:56px;height:56px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:14px;flex-shrink:0}
+.member-info h3{margin:0;font-size:16px}
+.member-info p{margin:2px 0;color:#6b7280}
+.member-score{margin-left:auto;font-weight:700;color:#0b84ff}
+.empty{color:#6b7280;padding:8px 0}
+
+.loading{padding:12px;color:#475569}

@@ -1,0 +1,46 @@
+<div class="page-root">
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>Best Members</h1>
+        <p class="lead">Explore top-performing members across committees — Mid-Season and End-Season bests.</p>
+      </div>
+      <div class="hero-actions">
+        <button class="btn-primary">Explore Clubs</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="panel">
+    <div class="section-title">
+      <div>
+        <h2 class="club-name">IEEE NU Student Branch Club</h2>
+        <div class="subtitle">Top members by committee</div>
+      </div>
+      <div class="tabs">
+        <div class="tab" [class.active]="active==='mid'" (click)="setSeason('mid')">Mid-Season</div>
+        <div class="tab" [class.active]="active==='end'" (click)="setSeason('end')">End-Season</div>
+      </div>
+    </div>
+
+    <div *ngIf="loading" class="loading">Loading...</div>
+
+    <div class="committees">
+      <div class="committee-card" *ngFor="let c of committees">
+        <h3>{{c}}</h3>
+        <div *ngIf="memberForCommittee(active, c); else noOne" class="member-card">
+          <div class="avatar">{{memberForCommittee(active, c)?.name?.split(' ')[0]?.charAt(0) || 'M'}}</div>
+          <div class="member-info">
+            <h3>{{memberForCommittee(active, c)?.name}}</h3>
+            <p>{{memberForCommittee(active, c)?.role}}</p>
+          </div>
+          <div class="member-score">{{memberForCommittee(active, c)?.score || '-'}}</div>
+        </div>
+        <ng-template #noOne>
+          <div class="empty">No best member selected yet</div>
+        </ng-template>
+      </div>
+    </div>
+
+  </main>
+</div>

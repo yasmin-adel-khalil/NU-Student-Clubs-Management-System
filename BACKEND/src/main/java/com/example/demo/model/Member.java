@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -27,6 +28,7 @@ public class Member {
     @ManyToOne
     @JoinColumn(name = "club_id")
     @JsonBackReference
+    @JsonIgnore
     private Club club;
 
     public Member() {}
