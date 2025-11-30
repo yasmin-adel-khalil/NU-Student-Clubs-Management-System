@@ -1,6 +1,6 @@
-package com.ClubsManagementSystem.NewHomePage.Services;
+package com.NUClubs.login.signup.Services;
 
-import com.ClubsManagementSystem.NewHomePage.Models.Club;
+import com.NUClubs.login.signup.Models.Club;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

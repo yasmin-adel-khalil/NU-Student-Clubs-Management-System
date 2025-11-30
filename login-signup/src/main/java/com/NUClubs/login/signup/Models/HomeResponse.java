@@ -1,4 +1,4 @@
-package com.ClubsManagementSystem.NewHomePage.Models;
+package com.NUClubs.login.signup.Models;
 
 import java.util.List;
 

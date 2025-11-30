@@ -1,7 +1,7 @@
-package com.ClubsManagementSystem.NewHomePage.Controllers;
+package com.NUClubs.login.signup.Controllers;
 
-import com.ClubsManagementSystem.NewHomePage.Models.Highlight;
-import com.ClubsManagementSystem.NewHomePage.Services.MemberService;
+import com.NUClubs.login.signup.Models.Highlight;
+import com.NUClubs.login.signup.Services.MemberService;
 import org.springframework.web.bind.annotation.GetMapping;
 // Disabled: moved to backup package. Controller is kept here as a non-annotated class for reference.
 // import org.springframework.web.bind.annotation.RequestMapping;

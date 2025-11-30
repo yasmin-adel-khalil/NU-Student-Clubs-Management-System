@@ -1,19 +1,21 @@
-package com.ClubsManagementSystem.NewHomePage.Models;
+package com.NUClubs.login.signup.Models;
 
-public class Club {
+public class Highlight {
     private Long id;
     private String name;
+    private String title;
     private String description;
-    private int activeMembers;
+    private String avatarUrl;
 
-    public Club() {
+    public Highlight() {
     }
 
-    public Club(Long id, String name, String description, int activeMembers) {
+    public Highlight(Long id, String name, String title, String description, String avatarUrl) {
         this.id = id;
         this.name = name;
+        this.title = title;
         this.description = description;
-        this.activeMembers = activeMembers;
+        this.avatarUrl = avatarUrl;
     }
 
     public Long getId() {
@@ -32,6 +34,14 @@ public class Club {
         this.name = name;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -40,11 +50,11 @@ public class Club {
         this.description = description;
     }
 
-    public int getActiveMembers() {
-        return activeMembers;
+    public String getAvatarUrl() {
+        return avatarUrl;
     }
 
-    public void setActiveMembers(int activeMembers) {
-        this.activeMembers = activeMembers;
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 }

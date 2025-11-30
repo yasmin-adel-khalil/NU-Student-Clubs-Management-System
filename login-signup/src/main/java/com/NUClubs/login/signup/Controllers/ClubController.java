@@ -1,7 +1,7 @@
-package com.ClubsManagementSystem.NewHomePage.Controllers;
+package com.NUClubs.login.signup.Controllers;
 
-import com.ClubsManagementSystem.NewHomePage.Models.Club;
-import com.ClubsManagementSystem.NewHomePage.Services.ClubService;
+import com.NUClubs.login.signup.Models.Club;
+import com.NUClubs.login.signup.Services.ClubService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
