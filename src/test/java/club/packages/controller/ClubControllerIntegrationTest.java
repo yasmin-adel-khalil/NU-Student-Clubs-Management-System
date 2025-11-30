@@ -40,7 +40,7 @@ class ClubControllerIntegrationTest {
     @Test
     void getClub_returnsProfile() throws Exception {
         ClubProfileDTO dto = new ClubProfileDTO(2L, "Art", "M", "H", Arrays.asList("x"), Arrays.asList("m"), Arrays.asList("e"), false);
-        Mockito.when(clubService.getClubById(2L, false)).thenReturn(dto);
+    Mockito.when(clubService.getClubById(Mockito.eq(2L), Mockito.anyBoolean())).thenReturn(dto);
 
         mvc.perform(get("/clubs/2").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
